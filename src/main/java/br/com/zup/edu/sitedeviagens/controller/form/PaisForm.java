@@ -8,10 +8,6 @@ public class PaisForm {
     @NotBlank
     private String nome;
 
-    @Deprecated
-    public PaisForm() {
-    }
-
     public PaisForm(String nome) {
         this.nome = nome;
     }

@@ -1,5 +1,6 @@
 package br.com.zup.edu.sitedeviagens.controller.dto;
 
+import br.com.zup.edu.sitedeviagens.model.Companhia;
 import br.com.zup.edu.sitedeviagens.model.Pais;
 
 import java.time.LocalDateTime;
@@ -16,6 +17,12 @@ public class CompanhiaDto {
         this.nome = nome;
         this.pais = pais;
         this.instanteCriacao = instanteCriacao;
+    }
+
+    public CompanhiaDto(Companhia companhia) {
+        this.id = companhia.getId();
+        this.nome = companhia.getNome();
+        this.pais = companhia.getPais();
     }
 
     public Long getId() {

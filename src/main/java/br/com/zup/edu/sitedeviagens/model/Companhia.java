@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Entity
 public class Companhia {
@@ -15,10 +16,9 @@ public class Companhia {
     @NotBlank
     private String nome;
 
-    @NotBlank
-    @NotNull
     @ManyToOne
     private Pais pais ;
+
     private LocalDateTime instanteCriacao = LocalDateTime.now();
 
     public Companhia(String nome, Pais pais) {
@@ -33,4 +33,6 @@ public class Companhia {
     public String getNome() {
         return nome;
     }
+
+    public Pais getPais() { return pais; }
 }
