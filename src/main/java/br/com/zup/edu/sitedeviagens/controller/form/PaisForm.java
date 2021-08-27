@@ -1,9 +1,11 @@
 package br.com.zup.edu.sitedeviagens.controller.form;
 
 import br.com.zup.edu.sitedeviagens.model.Pais;
+import javax.validation.constraints.NotBlank;
 
 public class PaisForm {
 
+    @NotBlank
     private String nome;
 
     @Deprecated
@@ -18,9 +20,7 @@ public class PaisForm {
         return nome;
     }
 
-
-    public Pais convert(){
+    public Pais formToEntity(){
         return new Pais(this.nome);
-
     }
 }
