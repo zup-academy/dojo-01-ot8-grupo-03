@@ -17,4 +17,8 @@ public class PaisDto {
     public PaisDto formToDto(Pais pais) {
         return new PaisDto(pais.getNome());
     }
+
+    public String getNome() {
+        return nome;
+    }
 }
