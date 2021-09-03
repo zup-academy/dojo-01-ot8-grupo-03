@@ -18,12 +18,11 @@ public class Aeroporto {
     private String nome;
 
     @NotBlank
-    @OneToMany
+    @ManyToOne
     private Pais pais;
 
 
-    public Aeroporto(Long id, String nome, Pais pais) {
-        this.id = id;
+    public Aeroporto(String nome, Pais pais) {
         this.nome = nome;
         this.pais = pais;
     }
