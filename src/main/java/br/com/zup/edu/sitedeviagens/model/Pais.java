@@ -1,5 +1,7 @@
 package br.com.zup.edu.sitedeviagens.model;
 
+import br.com.zup.edu.sitedeviagens.validacao.ValorExclusivo;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

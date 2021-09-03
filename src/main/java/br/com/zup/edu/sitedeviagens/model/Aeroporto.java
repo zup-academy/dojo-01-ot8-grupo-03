@@ -1,6 +1,7 @@
 package br.com.zup.edu.sitedeviagens.model;
 
 import br.com.zup.edu.sitedeviagens.validacao.ValorExclusivo;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

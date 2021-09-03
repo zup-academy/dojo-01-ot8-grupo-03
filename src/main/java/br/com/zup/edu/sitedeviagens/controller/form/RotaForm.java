@@ -12,32 +12,30 @@ public class RotaForm {
 
     @NotBlank
     @ManyToOne
-    private String origem;
+    private Long origem;
 
     @NotBlank
     @ManyToOne
-    private String destino;
+    private Long destino;
 
     @NotBlank
     @Positive
     private Long duracao;
 
-    public RotaForm(String nome, String origem, String destino, Long duracao) {
+    public RotaForm(String nome, Long origem, Long destino, Long duracao) {
         this.nome = nome;
         this.origem = origem;
         this.destino = destino;
         this.duracao = duracao;
     }
 
-    public Rota toModel(RotaRepository repository){
-        if(origem == destino){
-            throw new IllegalArgumentException("Rota de origem não pode ser igual a rota de destino");
-        }else{
-            repository.findById(origem);
-
-        }
-
-    return new Rota();
-    }
+//    public Rota toModel(RotaRepository repository){
+//        if(origem == destino){
+//            throw new IllegalArgumentException("Rota de origem não pode ser igual a rota de destino");
+//        }else{
+//            repository.findById(origem);
+//            return
+//        }
+//    }
 
 }

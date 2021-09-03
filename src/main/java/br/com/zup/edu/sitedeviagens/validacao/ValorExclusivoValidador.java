@@ -25,8 +25,8 @@ public class ValorExclusivoValidador implements ConstraintValidator<ValorExclusi
 
     @Override
     public boolean isValid(Object criterio, ConstraintValidatorContext context) {
-        Query query = manager.createQuery("SELECT 1 FROM " +
-                klass.getName() + " WHERE " + domainAtribute + " = :criterio ");
+        Query query = manager.createQuery("SELECT 1 FROM " + klass.getName() + " WHERE " + domainAtribute + " = " +
+                ":criterio ");
         query.setParameter("criterio", criterio);
         List<?> existentes = query.getResultList();
         return existentes.isEmpty();

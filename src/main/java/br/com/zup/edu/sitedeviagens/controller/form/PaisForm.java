@@ -1,12 +1,18 @@
 package br.com.zup.edu.sitedeviagens.controller.form;
 
 import br.com.zup.edu.sitedeviagens.model.Pais;
+import br.com.zup.edu.sitedeviagens.validacao.ValorExclusivo;
+
 import javax.validation.constraints.NotBlank;
 
 public class PaisForm {
 
     @NotBlank
     private String nome;
+
+    @Deprecated
+    public PaisForm() {
+    }
 
     public PaisForm(String nome) {
         this.nome = nome;
