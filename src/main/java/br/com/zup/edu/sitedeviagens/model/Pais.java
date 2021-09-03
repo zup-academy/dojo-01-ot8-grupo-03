@@ -16,6 +16,7 @@ public class Pais {
     private Long id;
 
     @NotBlank
+    @ValorExclusivo( fieldName = "nome", domainClass = Pais.class, message = "Não pode ser repetido")
     private String nome;
 
     @Deprecated

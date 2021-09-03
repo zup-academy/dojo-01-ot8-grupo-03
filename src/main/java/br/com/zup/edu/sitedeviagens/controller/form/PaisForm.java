@@ -7,6 +7,7 @@ import javax.validation.constraints.NotBlank;
 
 public class PaisForm {
 
+    @ValorExclusivo( fieldName = "nome", domainClass = Pais.class, message = "Não pode ser repetido")
     @NotBlank
     private String nome;
 
