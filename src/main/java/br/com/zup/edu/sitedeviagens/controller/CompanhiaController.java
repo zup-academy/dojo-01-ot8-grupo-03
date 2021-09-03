@@ -31,7 +31,6 @@ public class CompanhiaController {
     public CompanhiaDto cadastrar(@RequestBody @Valid CompanhiaForm form) {
         Companhia companhia = form.formToEntity(paisRepository);
         companhiaRepository.save(companhia);
-
         return new CompanhiaDto(companhia);
     }
 

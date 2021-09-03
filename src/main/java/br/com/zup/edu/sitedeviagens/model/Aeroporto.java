@@ -1,29 +1,29 @@
 package br.com.zup.edu.sitedeviagens.model;
 
+import br.com.zup.edu.sitedeviagens.validacao.ValorExclusivo;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
-import java.util.Optional;
+import java.io.StringBufferInputStream;
 
 @Entity
-public class Companhia {
+public class Aeroporto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
+    @ValorExclusivo(domainClass = Aeroporto.class, fieldName = "nome", message = "Nome precisa ser exclusivo")
     private String nome;
 
-    @NotNull
     @NotBlank
-    @ManyToOne
-    private Pais pais ;
+    @OneToMany
+    private Pais pais;
 
-    private LocalDateTime instanteCriacao = LocalDateTime.now();
 
-    public Companhia(String nome, Pais pais) {
+    public Aeroporto(Long id, String nome, Pais pais) {
+        this.id = id;
         this.nome = nome;
         this.pais = pais;
     }
@@ -36,5 +36,9 @@ public class Companhia {
         return nome;
     }
 
-    public Pais getPais() { return pais; }
+    public Pais getPais() {
+        return pais;
+    }
+
+
 }

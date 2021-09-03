@@ -4,6 +4,7 @@ import br.com.zup.edu.sitedeviagens.model.Pais;
 import br.com.zup.edu.sitedeviagens.repository.PaisRepository;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
 public class CompanhiaForm {
@@ -12,6 +13,7 @@ public class CompanhiaForm {
     private String nome;
 
     @NotBlank
+    @NotNull
     private String pais;
 
     public CompanhiaForm(String nome, String pais) {
@@ -21,7 +23,6 @@ public class CompanhiaForm {
 
     public Companhia formToEntity(PaisRepository paisRepository) {
         Pais pais = paisRepository.findFirstByNome(this.pais);
-
         return new Companhia(this.nome, pais);
     }
 
